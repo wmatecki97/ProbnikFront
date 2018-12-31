@@ -1,5 +1,8 @@
+import { TaskState } from './TaskState';
 import { Patron } from './Patron';
 import { Person } from './Person';
+import { TaskContent } from './TaskContent';
+
 export interface Challange {
         Id: number;
         Owner: Person;

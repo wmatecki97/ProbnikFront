@@ -12,6 +12,7 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { ChallengeComponent } from './Components/challenge/challenge.component';
 import { TeamComponent } from './Components/team/team.component';
+import { CreatePersonFormComponent } from './Components/create-person-form/create-person-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TeamComponent } from './Components/team/team.component';
     ProfileComponent,
     ChallengeComponent,
     AllChallengesComponent,
-    TeamComponent
+    TeamComponent,
+    CreatePersonFormComponent
   ],
   imports: [
     BrowserModule,

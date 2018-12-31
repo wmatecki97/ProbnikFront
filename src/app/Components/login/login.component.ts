@@ -1,3 +1,4 @@
+import { DataTransferService } from './../../Services/data-transfer.service';
 import { User } from './../../Models/User';
 import { LoginService } from './../../Services/login.service';
 import { Component, OnInit } from '@angular/core';
@@ -13,10 +14,12 @@ export class LoginComponent implements OnInit {
 
   public user: User;
 
-  constructor(private service: LoginService) { }
+  constructor(private service: LoginService, private data: DataTransferService) { }
 
   ngOnInit() {
     console.log('subscribed');
+
+    this.data.user.subscribe(u => this.user = u);
 
     this.service.getUser().subscribe(res => {
       this.user = res.json() as User;
@@ -33,5 +36,6 @@ export class LoginComponent implements OnInit {
           console.log(this.user);
         });
       }
+
   }
 }
