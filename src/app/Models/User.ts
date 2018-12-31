@@ -1,9 +1,11 @@
-export class User {
+import { Person } from './Person';
+interface UserDTO {
+    Id: number;
+    Login: string;
+    Password: string;
+    Email: string;
+    IsAdmin: boolean;
+    Token: string;
 
-    public Id: string;
-    public Login: string ;
-    public Password: string ;
-    public Email: string ;
-    public IsAdmin: boolean ;
-    public token: string ;
+    ConnectedPeople: Person[];
 }
