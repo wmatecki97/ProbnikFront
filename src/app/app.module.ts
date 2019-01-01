@@ -48,3 +48,5 @@ import { HttpModule } from '@angular/http';
   bootstrap: [AppComponent],
 })
 export class AppModule { }
+//WYKONAĆ W WINDOWS -> RUN
+// chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security

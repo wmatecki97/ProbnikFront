@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
        console.log("GetPerson");
         this.service.getPerson(this.user).subscribe(res => {
           this.person = res.json() as Person;
+          console.log(this.person)
           this.router.navigate(['Person/' + this.person.Id]);
         });
     }
