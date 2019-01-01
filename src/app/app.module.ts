@@ -1,9 +1,9 @@
+import { DataTransferService } from './Services/data-transfer.service';
 import { AllChallengesComponent } from './Components/all-challenges/all-challenges.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Components/login/login.component';
@@ -13,6 +13,8 @@ import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { ChallengeComponent } from './Components/challenge/challenge.component';
 import { TeamComponent } from './Components/team/team.component';
 import { CreatePersonFormComponent } from './Components/create-person-form/create-person-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { CreatePersonFormComponent } from './Components/create-person-form/creat
     AppRoutingModule,
     HttpModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: AppComponent},
       { path: 'Login', component: LoginComponent},
@@ -41,7 +44,7 @@ import { CreatePersonFormComponent } from './Components/create-person-form/creat
       { path: '**', component: NotFoundComponent}
     ])
   ],
-  providers: [],
+  providers: [AppModule, DataTransferService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

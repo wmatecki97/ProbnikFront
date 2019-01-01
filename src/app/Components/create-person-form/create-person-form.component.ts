@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatePersonFormComponent implements OnInit {
 
-  person: Person
+  person: Person;
   constructor() { }
 
   ngOnInit() {
   }
 
-  
+
 
 }

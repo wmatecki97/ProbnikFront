@@ -18,4 +18,8 @@ export class LoginService {
     return this.http.put('/api/Login', user);
     // return this.http.post('http://localhost:1234/Login', user);
   }
+
+  getPerson(user: User) {
+    return this.http.get('/api/Get/Person/' + user.Token);
+  }
 }

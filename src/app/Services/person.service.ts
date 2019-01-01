@@ -6,14 +6,14 @@ import { Injectable, OnInit } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class PersonService implements OnInit{
+export class PersonService implements OnInit {
 
   constructor(private http: Http, private data: DataTransferService) { }
   private person: Person;
 
-  ngOnInit(){
+  ngOnInit() {
     this.data.person.subscribe(p => {
       this.person = p;
-    })
+    });
   }
 }
