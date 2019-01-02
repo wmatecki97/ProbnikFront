@@ -37,18 +37,21 @@ export class LoginComponent implements OnInit {
       if (this.user.Login !== '' && this.user.Password !== '') {
         this.service.logIn(this.user).subscribe(res => {
           this.user = res.json() as User;
-          console.log(this.user);
+          
+          this.data.setUser(this.user);
+
+          this.goToPerson();
         });
       }
-      this.goToPerson();
   }
 
   goToPerson() {
      if (this.user !== undefined) {
-       console.log("GetPerson");
         this.service.getPerson(this.user).subscribe(res => {
           this.person = res.json() as Person;
-          console.log(this.person)
+
+          this.data.setPerson(this.person);
+
           this.router.navigate(['Person/' + this.person.Id]);
         });
     }

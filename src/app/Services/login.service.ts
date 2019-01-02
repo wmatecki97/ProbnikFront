@@ -16,10 +16,10 @@ export class LoginService {
 
   logIn(user: User): Observable<Response> {
     // return this.http.put('/api/Login', user);
-    return this.http.put('http://localhost:1234/Login', user);
+    return this.http.put(ServiceConfiguration.address + 'Login', user);
   }
 
   getPerson(user: User) {
-    return this.http.get('http://localhost:1234/Get/Person/' + user.Token);
+    return this.http.get(ServiceConfiguration.address + 'Get/Person/' + user.Token);
   }
 }

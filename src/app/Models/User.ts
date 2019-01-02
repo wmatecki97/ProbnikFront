@@ -1,5 +1,5 @@
 import { Person } from './Person';
-export interface User {
+export class User {
     Id: number;
     Login: string;
     Password: string;
