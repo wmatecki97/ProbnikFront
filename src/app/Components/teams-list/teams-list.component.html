@@ -1,3 +1,3 @@
-<p>
-  teams-list works!
-</p>
+<div class="list-group" *ngIf="currentMethodology == undefined">
+   <span *ngFor="let methodology of methodologies" (click)="selectMethodology(methodology.Id)" class="list-group-item list-group-item-action pointer">{{methodology.Name}}</span>
+</div>

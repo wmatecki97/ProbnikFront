@@ -1,12 +1,12 @@
 import { Patron } from './Patron';
 import { Person } from './Person';
 import { Methodology } from './Methodology';
-export interface Team {
+export interface TeamDTO
+{
     Id: number;
     Name: string;
-    Owner: Person;
     OwnerId: number;
-    Methodologies: Methodology[];
-    Members: Person[];
-    Patrons: Patron[];
+    Methodologies: number[];
+    Members: number[];
+    Patrons: number[];
 }

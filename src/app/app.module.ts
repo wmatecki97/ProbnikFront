@@ -42,7 +42,7 @@ import { TeamsListComponent } from './Components/teams-list/teams-list.component
       { path: 'Challenges', component: AllChallengesComponent},
       { path: 'Challenge/:id', component: AllChallengesComponent},
       { path: 'Person/:id', component: ProfileComponent},
-      { path: 'Team/:id', component: TeamComponent},
+      { path: 'Teams', component: TeamsListComponent},
       { path: '**', component: NotFoundComponent}
     ])
   ],

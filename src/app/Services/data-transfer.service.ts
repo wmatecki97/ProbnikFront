@@ -26,4 +26,9 @@ export class DataTransferService {
     this.userSource.next(value);
     console.log(this.userSource);
   }
+
+  getToken(){
+      let user = this.user.toPromise();
+      console.log(user);
+  }
 }
