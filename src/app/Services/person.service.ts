@@ -34,6 +34,7 @@ export class PersonService implements OnInit {
       this.person = p;
     });
   }
+  
   getUser(){
     this.data.user.subscribe(u => {
       this.user = u;

@@ -16,6 +16,7 @@ import { CreatePersonFormComponent } from './Components/create-person-form/creat
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { TeamsListComponent } from './Components/teams-list/teams-list.component';
+import { MethodologiesComponent } from './Components/teams-list/methodologies/methodologies.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { TeamsListComponent } from './Components/teams-list/teams-list.component
     AllChallengesComponent,
     TeamComponent,
     CreatePersonFormComponent,
-    TeamsListComponent
+    TeamsListComponent,
+    MethodologiesComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,7 @@ import { TeamsListComponent } from './Components/teams-list/teams-list.component
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: '', component: AppComponent},
+      { path: '', component: LoginComponent},
       { path: 'Login', component: LoginComponent},
       { path: 'Challenges', component: AllChallengesComponent},
       { path: 'Challenge/:id', component: AllChallengesComponent},
