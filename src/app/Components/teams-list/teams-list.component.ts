@@ -23,11 +23,11 @@ export class TeamsListComponent implements OnInit {
   getTeams() {
     if (this.showAllTeams) {
       this.service.getAllTeams().subscribe(res => {
-        this.teams = res.json() as Team[];
+        this.teams = res.json();
       });
     }
     else {
-      this.service.getTeamsForMethodology().subscribe(res => {
+      this.service.getTeamsForMethodology(this.methodology.Id).subscribe(res => {
         this.teams = res.json();
       });
     }

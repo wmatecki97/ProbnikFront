@@ -1,12 +1,15 @@
 import { DataTransferService } from './data-transfer.service';
-import { Http } from '@angular/http';
-import { Injectable, OnInit } from '@angular/core';
+import { User } from './../Models/User';
+import { ServiceConfiguration } from './ServiceConfiguration';
+import { Http, Response } from '@angular/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class TeamService implements OnInit{
+export class TeamService {
 
   constructor(private http: Http, private data: DataTransferService) { }
 
@@ -34,7 +37,8 @@ export class TeamService implements OnInit{
   getAllTeams(): Observable<Response>
   {
     this.getUser();
-    return undefined;
+    return this.http.get(ServiceConfiguration.address + 'Get/User');
+    // return this.http.get("asdasd");
   }
 
   getAllMethodologies(): Observable<Response>
@@ -54,6 +58,5 @@ export class TeamService implements OnInit{
     this.getPerson();
     return undefined;
   }
-
 
 }
