@@ -1,3 +1,4 @@
+import { DataTransferService } from './../../Services/data-transfer.service';
 import { Methodology } from './../../Models/Methodology';
 import { Team } from './../../Models/Team';
 import { TeamService } from './../../Services/team.service';
@@ -10,14 +11,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamsListComponent implements OnInit {
 
-  constructor(private service: TeamService) { }
+  constructor(private service: TeamService, private data: DataTransferService) { }
 
   teams: Team[];
+  methodologies: Methodology[];
   showAllTeams: boolean;
   methodology: Methodology;
+  team: Team;
 
   ngOnInit() {
+    this.showAllTeams = false;
+  }
 
+  getAllMethodologies(){
+    this.service.getAllMethodologies().subscribe(res =>{
+      this.methodologies = res.json();
+    })
+  }
+
+  selectMethodology(id: number){
+    for (let m of this.methodologies)    {
+      if(m.Id == id)
+      {
+        this.methodology = m;
+      }
+    }
+    this.service.assignMethodology();
   }
 
   getTeams() {

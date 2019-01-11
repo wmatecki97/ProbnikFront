@@ -34,10 +34,15 @@ export class TeamService {
     });
   }
 
+  assignMethodology(id:number){
+    this.getPerson();
+    this.http.post(ServiceConfiguration.address + 'Add/Methodoloogy/' + id, this.person);
+  }
+
   getAllTeams(): Observable<Response>
   {
     this.getUser();
-    return this.http.get(ServiceConfiguration.address + 'Get/User');
+    return this.http.get(ServiceConfiguration.address + 'Get/Teams');
     // return this.http.get("asdasd");
   }
 

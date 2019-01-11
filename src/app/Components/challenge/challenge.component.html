@@ -1,3 +1,8 @@
-<p>
-  challenge works!
-</p>
+<div *ngIf="selectedChallengeType == undefined">
+  <div class="form-group row">
+    <label for="Name" class="col-sm-2 col-form-label">Imie</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="Name" [(ngModel)]="person.Name" name = "Name">
+    </div>
+  </div>
+</div>
