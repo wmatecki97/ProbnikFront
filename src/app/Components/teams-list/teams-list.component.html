@@ -1,3 +1,7 @@
 <div class="list-group" *ngIf="currentMethodology == undefined">
    <span *ngFor="let methodology of methodologies" (click)="selectMethodology(methodology.Id)" class="list-group-item list-group-item-action pointer">{{methodology.Name}}</span>
 </div>
+
+<div class="list-group" *ngIf="currentMethodology != undefined">
+   <span *ngFor="let team of teams" (click)="joinTeam(team.Id)" class="list-group-item list-group-item-action pointer">{{team.Name}}</span>
+</div>

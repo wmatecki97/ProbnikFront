@@ -17,7 +17,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { TeamsListComponent } from './Components/teams-list/teams-list.component';
 import { MethodologiesComponent } from './Components/teams-list/methodologies/methodologies.component';
-import { ChallangeComponent } from './Components/challange/challange.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +30,7 @@ import { ChallangeComponent } from './Components/challange/challange.component';
     TeamComponent,
     CreatePersonFormComponent,
     TeamsListComponent,
-    MethodologiesComponent,
-    ChallangeComponent
+    MethodologiesComponent
   ],
   imports: [
     BrowserModule,

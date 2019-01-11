@@ -1,9 +1,8 @@
-
+import { Team } from 'src/app/Models/Team';
 import { Methodology } from './../../Models/Methodology';
 import { DataTransferService } from './../../Services/data-transfer.service';
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from 'src/app/Services/team.service';
-import { Team } from 'src/app/Models/Team';
 
 
 @Component({
@@ -28,6 +27,7 @@ export class TeamsListComponent implements OnInit {
 
   selectMethodology(id)
   {
+    console.log('selecting methodology' + id);
     this.methodologies.forEach(element => {
       if(element.Id == id)
         this.currentMethodology = element;
@@ -37,4 +37,6 @@ export class TeamsListComponent implements OnInit {
       console.log(this.teams);
     })
   }
+
+  
 }
