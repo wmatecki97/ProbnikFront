@@ -46,7 +46,7 @@ import { ChallangeComponent } from './Components/challange/challange.component';
       { path: 'Challenges', component: AllChallengesComponent},
       { path: 'Challenge/:id', component: AllChallengesComponent},
       { path: 'Person/:id', component: ProfileComponent},
-      { path: 'Team/:id', component: TeamComponent},
+      { path: 'Teams', component: TeamsListComponent},
       { path: '**', component: NotFoundComponent}
     ])
   ],

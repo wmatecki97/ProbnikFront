@@ -1,32 +1,25 @@
-import { DataTransferService } from './data-transfer.service';
 import { User } from './../Models/User';
 import { ServiceConfiguration } from './ServiceConfiguration';
-import { Http, Response } from '@angular/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-
+import { Person } from './../Models/Person';
+import { DataTransferService } from './data-transfer.service';
+import { Http } from '@angular/http';
+import { Injectable, OnInit } from '@angular/core';
+>>>>>>> 9042db458430c696f1bef93d5dd5960b682b9080
 
 @Injectable({
   providedIn: 'root'
 })
-export class TeamService {
+
+export class TeamService implements OnInit {
 
   constructor(private http: Http, private data: DataTransferService) { }
 
-  private user;
-  private person;
+  user: User;
 
   ngOnInit(){
-    this.getPerson();
-    this.getUser();
+   
   }
 
-  getPerson(){
-    this.data.person.subscribe(p => {
-      this.person = p;
-    });
-  }
-  
   getUser(){
     this.data.user.subscribe(u => {
       this.user = u;
@@ -63,5 +56,6 @@ export class TeamService {
     this.getPerson();
     return undefined;
   }
+
 
 }
