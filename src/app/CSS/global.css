@@ -1,6 +1,28 @@
-.center{
-    width:50%;
-    margin-top: 30px;
-    padding-top: 70px 0;
-    border: 3px solid green;
+.title-large{
+    font-size: 40px;
 }
+
+.title-medium{
+    font-size: 30px;
+}
+
+.title-small{
+    font-size: 20px;
+}
+
+.mid-size{
+    width: 60%;
+}
+
+.center{
+    margin:auto;
+}
+
+.small-size{
+    width: 20%;
+}
+
+.tiny-size{
+    width: 10%;
+}
+

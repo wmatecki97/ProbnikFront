@@ -62,7 +62,8 @@ export class TeamService implements OnInit {
   joinTeam(teamId: number): Observable<Response>
   {
     this.getPerson();
-    return undefined;
+    this.getUser();
+    return this.http.post(ServiceConfiguration.address + 'Join/Team/' + teamId + '/'+this.user.Token, this.person);
   }
 
 

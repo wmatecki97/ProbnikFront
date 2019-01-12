@@ -1,3 +1,6 @@
+import { Observable } from 'rxjs/internal/Observable';
+import { Team } from './../../Models/Team';
+import { DataTransferService } from './../../Services/data-transfer.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamComponent implements OnInit {
 
-  constructor() { }
+  constructor(private data: DataTransferService) { }
+
+  team$: Observable<Team>;
 
   ngOnInit() {
+    this.team$ = this.data.team;
   }
-
 }

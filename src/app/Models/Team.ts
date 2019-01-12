@@ -2,12 +2,12 @@ import { Patron } from './Patron';
 import { Person } from './Person';
 import { Methodology } from './Methodology';
 
-export interface Team
+export class Team
 {
     Id: number;
     Name: string;
     OwnerId: number;
-    Methodologies: number[];
-    Members: number[];
-    Patrons: number[];
+    Methodologies: Methodology[];
+    Members: Person[];
+    Patrons: Person[];
 }

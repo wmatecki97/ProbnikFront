@@ -1,7 +1,22 @@
-<div class="list-group" *ngIf="currentMethodology == undefined">
-   <span *ngFor="let methodology of methodologies" (click)="selectMethodology(methodology.Id)" class="list-group-item list-group-item-action pointer">{{methodology.Name}}</span>
-</div>
+<div class="center mid-size">
+   <div class="list-group" *ngIf="currentMethodology == undefined">
+      <span *ngFor="let methodology of methodologies" (click)="selectMethodology(methodology.Id)" class="list-group-item list-group-item-action pointer">{{methodology.Name}}</span>
+   </div>
 
-<div class="list-group" *ngIf="currentMethodology != undefined">
-   <span *ngFor="let team of teams" (click)="joinTeam(team.Id)" class="list-group-item list-group-item-action pointer">{{team.Name}}</span>
+   <div *ngIf="currentMethodology != undefined">
+      <span class="title-large">
+         Lista drużyn {{currentMethodology.Name}}
+      </span>
+      <div class="form-group row" *ngFor="let team of teams">
+
+         <span class="small-size content-center title-small">{{team.Name}} </span>
+      
+            <button type="button" *ngIf="!isMember(team.Id)" (click)="joinTeam(team.Id)"
+               class="btn btn-primary">Dołącz</button>
+            <button type="button" *ngIf="isMember(team.Id)" (click)="joinTeam(team.Id)"
+               class="btn btn-primary">Wybierz</button>
+      
+      </div>
+   </div>
+
 </div>

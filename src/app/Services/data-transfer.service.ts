@@ -1,3 +1,4 @@
+import { Team } from './../Models/Team';
 import { Person } from './../Models/Person';
 import { User } from './../Models/User';
 import { Injectable } from '@angular/core';
@@ -13,6 +14,9 @@ export class DataTransferService {
   private personSource =  new BehaviorSubject<Person>(new Person());
   person = this.personSource.asObservable();
 
+  private teamSource =  new BehaviorSubject<Team>(new Team());
+  team = this.teamSource.asObservable();
+
   constructor() { }
 
   setPerson(value: Person)
@@ -26,9 +30,10 @@ export class DataTransferService {
     this.userSource.next(value);
     console.log(this.userSource);
   }
-
-  getToken(){
-      let user = this.user.toPromise();
-      console.log(user);
+  
+  setTeam(value: Team){
+    console.log("team changed");
+    this.teamSource.next(value);
+    console.log(value);
   }
 }

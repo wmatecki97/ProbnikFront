@@ -1,3 +1,25 @@
-<p>
-  team works!
-</p>
+<div *ngIf="team$ | async as team">
+    <form *ngIf="team.Name != undefined" class="center mid-size">
+        <div class="form-group row">
+          <span class="title-large center">{{team.Name}}</span>
+        </div>
+        <div class="form-group row">
+            <span class="mid-width title-small">Metodologia: </span>
+            <span *ngFor="let m of team.Methodologies"> {{m.Name}} </span>
+    
+        </div>
+        <div class="form-group row">
+            <span class="mid-width title-small">Liczba członków:</span>
+            <span>{{team.Members.length}}</span>
+        </div>
+        <div class="form-group row">
+          <span class="title-medium">Opiekunowie: </span>
+        </div>
+        <div *ngFor="let patron of team.Patrons">
+            <div class="form-group row" >
+                <span class="small-size"> </span>
+                <span class="mid-width title-small">{{patron.Name}} {{patron.Surname}}</span>
+            </div>
+        </div>
+    </form>
+</div>

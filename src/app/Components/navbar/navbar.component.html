@@ -18,5 +18,11 @@
         <a class="nav-link disabled" routerLink="#">Disabled</a>
       </li>
     </ul>
+    <ul class="navbar-nav right">
+        <li routerLinkActive="selected current" >
+          <a class="nav-link" *ngIf="team$ !== undefined && team$ | async as team" 
+              routerLink="/Team">{{team.Name}}</a>
+        </li>        
+    </ul>
   </div>
 </nav>
