@@ -1,5 +1,4 @@
 import { DataTransferService } from './Services/data-transfer.service';
-import { AllChallengesComponent } from './Components/all-challenges/all-challenges.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,7 +24,6 @@ import { TeamsListComponent } from './Components/teams-list/teams-list.component
     NotFoundComponent,
     ProfileComponent,
     ChallengeComponent,
-    AllChallengesComponent,
     TeamComponent,
     CreatePersonFormComponent,
     TeamsListComponent,
@@ -39,8 +37,7 @@ import { TeamsListComponent } from './Components/teams-list/teams-list.component
     RouterModule.forRoot([
       { path: '', component: LoginComponent},
       { path: 'Login', component: LoginComponent},
-      { path: 'Challenges', component: AllChallengesComponent},
-      { path: 'Challenge/:id', component: AllChallengesComponent},
+      { path: 'Challenge', component: ChallengeComponent},
       { path: 'Person/:id', component: ProfileComponent},
       { path: 'Teams', component: TeamsListComponent},
       { path: 'Team', component: TeamComponent},
