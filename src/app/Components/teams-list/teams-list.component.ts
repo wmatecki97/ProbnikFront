@@ -8,7 +8,7 @@ import { TeamComponent } from '../team/team.component';
 
 
 @Component({
-  selector: 'TeamsS',
+  selector: 'Teams',
   templateUrl: './teams-list.component.html',
   styleUrls: ['./teams-list.component.css']
 })

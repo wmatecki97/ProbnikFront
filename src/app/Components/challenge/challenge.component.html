@@ -1,5 +1,19 @@
-<div *ngIf="selectedChallengeType == undefined">
+<div *ngIf="selectedChallengeType == undefined" class="center mid-size">
   <div class="form-group row">
-    <span *ngFor="let challenge of types">{{challenge.Name}}</span>    
+    <span *ngFor="let challenge of types" 
+      (click)="selectChallengeType(challenge)" 
+      class="list-group-item list-group-item-action pointer">
+      {{challenge.Name}}
+    </span>    
   </div>
 </div>
+<div *ngIf="selectedChallengeType != undefined" class="center mid-size">
+    <div class="form-group row">
+      <span *ngFor="let challenge of types" 
+        (click)="selectedChallengeType = challenge" 
+        class="list-group-item list-group-item-action pointer">
+        {{challenge.Name}}
+      </span>    
+    </div>
+  </div>
+  
