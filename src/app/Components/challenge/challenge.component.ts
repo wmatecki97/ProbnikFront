@@ -42,7 +42,6 @@ export class ChallengeComponent implements OnInit {
 
   selectChallengeType(challenge: ChallangeType){
     this.selectedChallengeType = challenge;
-    this.service.
   }
 
 }
