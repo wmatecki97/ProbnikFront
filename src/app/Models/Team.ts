@@ -9,5 +9,5 @@ export class Team
     OwnerId: number;
     Methodologies: Methodology[];
     Members: Person[];
-    Patrons: Person[];
+    Patrons: Patron[];
 }

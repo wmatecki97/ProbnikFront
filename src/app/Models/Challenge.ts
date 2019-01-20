@@ -3,13 +3,12 @@ import { Patron } from './Patron';
 import { Person } from './Person';
 import { TaskContent } from './TaskContent';
 
-export interface Challange {
-        Id: number;
-        Owner: Person;
-        Task: TaskContent;
-        TaskId: number;
-        Mission: string;
-        State: TaskState;
-        Comments: string[];
-        Patron: Patron;
-    }
+export class Challange {
+    Id: number | null;
+    Owner: Person;
+    Task: TaskContent;
+    Mission: string;
+    State: TaskState;
+    Comment: string;
+    Patron: Patron;
+}
