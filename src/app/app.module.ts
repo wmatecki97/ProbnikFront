@@ -15,6 +15,7 @@ import { CreatePersonFormComponent } from './Components/create-person-form/creat
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { TeamsListComponent } from './Components/teams-list/teams-list.component';
+import { ChallengePatronComponent } from './Components/challenge-patron/challenge-patron.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { TeamsListComponent } from './Components/teams-list/teams-list.component
     TeamComponent,
     CreatePersonFormComponent,
     TeamsListComponent,
+    ChallengePatronComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,11 +40,11 @@ import { TeamsListComponent } from './Components/teams-list/teams-list.component
       { path: '', component: LoginComponent},
       { path: 'Login', component: LoginComponent},
       { path: 'Challenge', component: ChallengeComponent},
-      { path: 'Person/:id', component: ProfileComponent},
+      { path: 'Person', component: ProfileComponent},
       { path: 'Teams', component: TeamsListComponent},
       { path: 'Team', component: TeamComponent},
+      { path: 'ChallengePatron', component: ChallengePatronComponent},
       { path: '**', component: NotFoundComponent},
-
     ])
   ],
   providers: [AppModule, DataTransferService],

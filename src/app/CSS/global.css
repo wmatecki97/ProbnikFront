@@ -37,6 +37,16 @@
     text-align: center;
 }
 
-.padding-small{
-    padding: 20px;
+.mycontent-left {
+    border-right: 1px solid #333;
+  }
+
+.middle{
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.small-padding{
+  padding: 20px;
 }

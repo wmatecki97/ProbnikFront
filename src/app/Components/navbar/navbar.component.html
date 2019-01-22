@@ -1,21 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" routerLink="/Login">XD</a>
+  <a class="navbar-brand" routerLink="/Login">Login</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li routerLinkActive="selected current" >
-        <a class="nav-link" routerLink="/Person/0">Profil</a>
+      <li routerLinkActive="selected current" *ngIf="user$ !== undefined && user$ | async as user">
+        <a class="nav-link" routerLink="/Person">Profil</a>
       </li>
-      <li routerLinkActive="selected current" class="nav-item">
+      <li routerLinkActive="selected current" class="nav-item" *ngIf="team$ !== undefined && team$ | async as team" >
         <a class="nav-link" routerLink="/Challenge">Próby</a>
       </li>
-      <li routerLinkActive="selected current" class="nav-item">
+      <li routerLinkActive="selected current" class="nav-item" *ngIf="person$ !== undefined && person$ | async as person">
         <a class="nav-link" routerLink="Teams">Drużyny</a>
       </li>
-      <li routerLinkActive="selected current" class="nav-item">
-        <a class="nav-link disabled" routerLink="#">Disabled</a>
+      <li routerLinkActive="selected current" class="nav-item" *ngIf="patron$ !== undefined && patron$ | async as patron">
+        <a class="nav-link" routerLink="ChallengePatron">Podopieczni</a>
       </li>
     </ul>
     <ul class="navbar-nav right">

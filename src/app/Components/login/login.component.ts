@@ -1,3 +1,4 @@
+import { Patron } from './../../Models/Patron';
 import { Person } from './../../Models/Person';
 import { DataTransferService } from './../../Services/data-transfer.service';
 import { User } from './../../Models/User';
@@ -52,7 +53,11 @@ export class LoginComponent implements OnInit {
 
           this.data.setPerson(this.person);
 
-          this.router.navigate(['Person/' + this.person.Id]);
+          this.service.getPatron(this.person).subscribe(res => {
+            this.data.setPatron(res.json());
+          })
+
+          this.router.navigate(['Person']);
         });
     }
   }

@@ -4,18 +4,22 @@ import { User } from './../Models/User';
 import { Injectable } from '@angular/core';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { Http, HttpModule} from '@angular/http';
+import { Patron } from '../Models/Patron';
 
 @Injectable()
 export class DataTransferService {
 
-  private userSource = new BehaviorSubject<User>(new User());
+  private userSource = new BehaviorSubject<User>(undefined);
   user = this.userSource.asObservable();
 
-  private personSource =  new BehaviorSubject<Person>(new Person());
+  private personSource =  new BehaviorSubject<Person>(undefined);
   person = this.personSource.asObservable();
 
-  private teamSource =  new BehaviorSubject<Team>(new Team());
+  private teamSource =  new BehaviorSubject<Team>(undefined);
   team = this.teamSource.asObservable();
+
+  private patronSource = new BehaviorSubject<Patron>(undefined);
+  patron = this.patronSource.asObservable();
 
   constructor() { }
 
@@ -23,6 +27,12 @@ export class DataTransferService {
   {
     console.log("person changed");
     this.personSource.next(value);
+  }
+
+  setPatron(value: Patron)
+  {
+    console.log("person changed");
+    this.patronSource.next(value);
   }
 
   setUser(value: User){

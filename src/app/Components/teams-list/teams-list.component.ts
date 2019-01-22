@@ -27,8 +27,11 @@ export class TeamsListComponent implements OnInit {
   ngOnInit() {
     this.service.getAllMethodologies().subscribe(res => {
       this.methodologies = res.json();
+      console.log('metodologie:');
       console.log(res);
     });
+
+
   }
 
   getTeam(){

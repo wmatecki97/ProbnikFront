@@ -1,3 +1,4 @@
+import { Patron } from './../Models/Patron';
 import { Challange } from 'src/app/Models/Challenge';
 import { Person } from './../Models/Person';
 import { ChallangeType } from './../Models/ChallengeType';
@@ -8,6 +9,7 @@ import { ServiceConfiguration } from './ServiceConfiguration';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Team } from '../Models/Team';
+import { getUrlScheme } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -62,5 +64,16 @@ export class ChallengeService {
   saveChallenge(challenge: Challange[]){
     this.getUser();
     return this.http.post(ServiceConfiguration.address + 'Save/Challenge/' + this.user.Token, challenge);
+  }
+
+  getChallengesForPatron(patron: Patron)
+  {
+    this.getUser();
+    return this.http.get(ServiceConfiguration.address + 'Get/ChallengesForPatron/' + patron.Id + '/'+ patron.Person.Id + '/' + this.user.Token);
+  }
+
+  getAllChallengeTypes(){
+    this.getUser();
+    return this.http.get(ServiceConfiguration.address + 'Get/AllChallenges/' + this.user.Token);
   }
 }

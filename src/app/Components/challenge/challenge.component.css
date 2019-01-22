@@ -3,20 +3,7 @@
     display: inline-block;
 }
 
-.mycontent-left {
-    border-right: 1px solid #333;
-  }
-
-.middle{
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-}
-
 .comment{
   color: burlywood;
 }
 
-.small-padding{
-  padding: 20px;
-}

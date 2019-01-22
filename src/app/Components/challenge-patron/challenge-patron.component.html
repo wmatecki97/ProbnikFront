@@ -1,9 +1,20 @@
-<div *ngIf="selectedChallengeType == undefined" class="center mid-size">
+<div *ngIf="selectedProtege == undefined" class="center mid-size">
   <div class="form-group row">
-    <span *ngFor="let challenge of types" 
-      (click)="selectChallengeType(challenge)" 
+    <span *ngFor="let protege of proteges" 
+      (click)="selectProtege(protege)" 
       class="list-group-item list-group-item-action pointer">
-      {{challenge.Name}}
+      {{protege.Name}} {{protege.Surname}}
+    </span>    
+  </div>
+</div>
+
+<div *ngIf="selectedProtege != undefined && selectedChallengeType == undefined" class="center mid-size">
+  <span class="center big-size">{{selectedProtege.Name}} {{selectedProtege.Surname}}</span>
+  <div class="form-group row">
+    <span *ngFor="let challengeType of protegeChallengeTypes" 
+      (click)="selectChallengeType(challengeType)" 
+      class="list-group-item list-group-item-action pointer">
+      {{challengeType.Name}}
     </span>    
   </div>
 </div>
@@ -17,12 +28,12 @@
             Zadanie
           </div>
           <div class="col-sm">
-            Komentarze
+            Komentarz
           </div>
         </div>
     </div>  
   <div class="form-group row">
-      <div *ngFor="let task of tasks" 
+      <div *ngFor="let task of protegeChallenges" 
         class="list-group-item list-group-item-action pointer">
         <div class="container" [style.comment]="task.Comment != undefined && task.Comment != ''">
             <div class="row">
@@ -30,27 +41,15 @@
                     {{task.Task.Content}}
               </div>
               <div class="col-sm mycontent-left middle">
-                <textarea class="form-control" [(ngModel)]="task.Mission"></textarea>
+                {{task.Mission}}
               </div>
               <div class="col-sm middle">
-                {{task.Comment}}
+                  <textarea class="form-control" [(ngModel)]="task.Comment"></textarea>
               </div>
             </div>
         </div>
       </div>
     </div>    
-
-    <div *ngIf="challengePatron!=undefined" class="title-small small-padding">
-      Opiekun: {{challengePatron.Person.Name}} {{challengePatron.Person.Surname}}
-    </div>
-    <div *ngIf="challengePatron == undefined"  class="container .small-size small-padding">
-      <label for="inputState">Opiekun</label>
-      <select id="inputState" class="form-control"
-        [(ngModel)]="selectedPatron">
-        <option [ngValue]="undefined">Brak</option>
-        <option *ngFor="let patron of patrons" [ngValue]="patron">{{patron.Person.Name}} {{patron.Person.Surname}}</option>
-      </select>
-    </div>
     <button type="button" class="btn btn-primary" (click)="saveChallenge()">Zapisz</button>
 </div>
   
